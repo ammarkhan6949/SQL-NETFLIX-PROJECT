@@ -4,6 +4,7 @@
 
 ## Overview
 
+
 This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
 
 ### Objectives
@@ -16,6 +17,7 @@ This project involves a comprehensive analysis of Netflix's movies and TV shows 
 ### Dataset
 
 The dataset used in this project is the Netflix dataset containing details about movies and TV shows available on the platform.
+### Pdf link [netflix pp.pdf](https://github.com/user-attachments/files/22947183/netflix.pp.pdf)
 
 ### Schema
 ```sql
