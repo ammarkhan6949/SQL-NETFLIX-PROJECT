@@ -85,9 +85,9 @@ FROM
 WHERE
     type = 'movie' AND release_year = 2020;
      use netflix;
-     ```
+```
      
-  ### Q4: Find the top 5 countries with the most content on Netflix
+### Q4: Find the top 5 countries with the most content on Netflix
    
 ```sql     
 SELECT 
@@ -131,7 +131,7 @@ WHERE
 
 ### Q7: Find all the movies/TV shows by director 'Rajiv Chilaka'
 
-    ```sql
+ ```sql
     SELECT 
     *
 FROM
@@ -144,7 +144,7 @@ WHERE
    
 ### Q8: List all TV shows with more than 5 seasons
 
-    ```sql
+ ```sql
     SELECT 
     *
 FROM
@@ -152,11 +152,11 @@ FROM
 WHERE
     type = 'TV Show'
         AND CAST(SUBSTRING_INDEX(duration, ' ', 1) AS UNSIGNED) > 5;
-    ```    
+ ```    
         
   
   
-  -- Q9: Count the number of content items in each genre
+### Q9: Count the number of content items in each genre
 
 ```sql        
 SELECT
@@ -204,7 +204,7 @@ FROM
     netflix_data
 WHERE
     listed_in LIKE '%documentaries%';
-    ```
+```
     
 ### Q12: Find all content without a director
    
@@ -215,10 +215,10 @@ FROM
     netflix_data
 WHERE
     director IS NULL OR director = '';
-   ``` 
+ ``` 
 
 
--- Q13: Find how many movies actor 'Salman Khan' appeared in over the last 10 years
+### Q13: Find how many movies actor 'Salman Khan' appeared in over the last 10 years
  ```sql   
  SELECT 
     *
