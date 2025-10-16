@@ -49,13 +49,13 @@ CREATE TABLE netflix (
 
 ## Business Problems and SQL Solutions
  ### Q1: Count the number of Movies vs TV Shows
-
+'''sql
   SELECT 
     TYPE, COUNT(*) AS TOTAL
 FROM
     NETFLIX_DATA
 GROUP BY TYPE;
-
+'''
 
 
 ### Q2: Find the most common rating for movies and TV shows
