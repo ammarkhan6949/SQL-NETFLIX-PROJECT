@@ -24,7 +24,7 @@ Categorize and explore data using specific criteria and keywords.
 The dataset used in this project is the Netflix dataset containing details about movies and TV shows available on the platform.
 
 🧱 Schema
-'''sql
+```sql
 create database netflix;
 use netflix;
 
@@ -45,17 +45,17 @@ CREATE TABLE netflix (
   select * from  netflix_titles;
   drop database  netflix_db;
   rename table netflix_titles to netflix_data;
-  '''
+  ```
 
 ## Business Problems and SQL Solutions
  ### Q1: Count the number of Movies vs TV Shows
-'''sql
+```sql
   SELECT 
     TYPE, COUNT(*) AS TOTAL
 FROM
     NETFLIX_DATA
 GROUP BY TYPE;
-'''
+```
 
 
 ### Q2: Find the most common rating for movies and TV shows
