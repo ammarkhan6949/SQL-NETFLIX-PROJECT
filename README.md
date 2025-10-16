@@ -59,7 +59,7 @@ GROUP BY TYPE;
 
 
 ### Q2: Find the most common rating for movies and TV shows
-
+```sql
 select 
 type,
 rating
@@ -72,12 +72,11 @@ from
 from netflix_data
 group by type, rating) as a1
 where ranking =1;
-
-
+```
 
 ### Q3: List all movies released in a specific year (e.g., 2020)
 
-
+```sql
  select * from netflix_data;
 SELECT 
     title, type
@@ -86,11 +85,11 @@ FROM
 WHERE
     type = 'movie' AND release_year = 2020;
      use netflix;
-     
+     ```
      
   ### Q4: Find the top 5 countries with the most content on Netflix
    
-     
+```sql     
 SELECT 
     c.country,
     COUNT(*) AS total_shows
@@ -103,11 +102,11 @@ WHERE c.country IS NOT NULL AND c.country != ''
 GROUP BY c.country
 ORDER BY total_shows DESC
 LIMIT 5;
-
+```
 
 ### Q5: Identify the longest movie
 
-
+```sql
 SELECT 
     title, MAX(duration)
 FROM
@@ -116,11 +115,11 @@ WHERE
     type = 'movie'
 GROUP BY title
 ORDER BY MAX(duration) DESC;
-
+```
 
 
 ### Q6: Find content added in the last 5 years
-
+```sql
 SELECT 
     title, date_added
 FROM
@@ -128,24 +127,24 @@ FROM
 WHERE
     STR_TO_DATE(date_added, '%M %d, %Y') >= CURDATE() - INTERVAL 5 YEAR;
     
-    
+  ```  
 
 ### Q7: Find all the movies/TV shows by director 'Rajiv Chilaka'
 
-    
+    ```sql
     SELECT 
     *
 FROM
     netflix_data
 WHERE
     director LIKE '%rajiv chilaka%';
-    
+  ```  
    
    
    
 ### Q8: List all TV shows with more than 5 seasons
 
-    
+    ```sql
     SELECT 
     *
 FROM
@@ -153,13 +152,13 @@ FROM
 WHERE
     type = 'TV Show'
         AND CAST(SUBSTRING_INDEX(duration, ' ', 1) AS UNSIGNED) > 5;
-        
+    ```    
         
   
   
   -- Q9: Count the number of content items in each genre
 
-        
+```sql        
 SELECT
     g.genre,
     COUNT(n.show_id) AS total_content
@@ -171,11 +170,11 @@ JOIN JSON_TABLE(
 GROUP BY g.genre
 ORDER BY total_content DESC;
 
-
+```
 
 
 ### Q10: Find each year and the average number of content releases in India on Netflix.Return the top 5 years with the highest average content releases
-
+```sql
 
 SELECT 
     EXTRACT(YEAR FROM STR_TO_DATE(date_added, '%M %d, %Y')) AS year,
@@ -193,11 +192,11 @@ WHERE
 GROUP BY year
 ORDER BY year;
  
- 
+ ```
  
  
  ### Q11: List all movies that are documentaries
-
+```sql
  
 SELECT 
     *
@@ -205,22 +204,22 @@ FROM
     netflix_data
 WHERE
     listed_in LIKE '%documentaries%';
-    
+    ```
     
 ### Q12: Find all content without a director
    
-    
+ ```sql   
   SELECT 
     *
 FROM
     netflix_data
 WHERE
     director IS NULL OR director = '';
-    
+   ``` 
 
 
 -- Q13: Find how many movies actor 'Salman Khan' appeared in over the last 10 years
-    
+ ```sql   
  SELECT 
     *
 FROM
@@ -228,13 +227,13 @@ FROM
 WHERE
     cast LIKE '%salman khan%'
         AND release_year >=  year(CURRENT_DATE)-10;   
-        
+   ```     
         
   
   
 ### Q14: Categorize the content based on the presence of the keywords 'kill' and 'violence'in the description field. Label content containing these keywords as 'Bad'and all other content as 'Good.' Count how many items fall into each category
 
-        
+```sql        
 WITH new_table AS (
     SELECT 
         *,
@@ -248,7 +247,7 @@ WITH new_table AS (
 SELECT category, COUNT(*) AS total_content
 FROM new_table
 GROUP BY category;
-        
+    ```    
     
 
 
