@@ -2,28 +2,23 @@
 
 ![](https://github.com/ammarkhan6949/SQL-NETFLIX-PROJECT/blob/main/NETFLIX%20LOGO%20.png)
 
-🎬 Netflix Data Analysis Using SQL
-🧾 Overview
+## Netflix Data Analysis Using SQL
+## Overview
 
-This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL.
-The goal is to extract valuable insights and answer various business questions based on the dataset.
-This README includes the project’s objectives, schema, business problems with SQL solutions, findings, and conclusion.
+This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
 
-🎯 Objectives
+### Objectives
 
-Analyze the distribution of content types (Movies vs TV Shows).
+.Analyze the distribution of content types (movies vs TV shows).
+.Identify the most common ratings for movies and TV shows.
+.List and analyze content based on release years, countries, and durations.
+.Explore and categorize content based on specific criteria and keywords.
 
-Identify the most common ratings for both Movies and TV Shows.
-
-Retrieve and analyze content based on release years, countries, and duration.
-
-Categorize and explore data using specific criteria and keywords.
-
-📊 Dataset
+### Dataset
 
 The dataset used in this project is the Netflix dataset containing details about movies and TV shows available on the platform.
 
-🧱 Schema
+### Schema
 ```sql
 create database netflix;
 use netflix;
@@ -247,14 +242,14 @@ WITH new_table AS (
 SELECT category, COUNT(*) AS total_content
 FROM new_table
 GROUP BY category;
-    ```    
+ ```    
     
 
 
 
-Objective: Categorize content as Bad or Good based on specific keywords in the description.
+## Objective: Categorize content as Bad or Good based on specific keywords in the description.
 
-📈 Findings and Conclusion
+### Findings and Conclusion
 
 The dataset shows Movies are more frequent than TV Shows on Netflix.
 
@@ -265,3 +260,7 @@ India and United States are among the countries producing the most content.
 A small portion of titles include violent or dark keywords, marked as Bad Content.
 
 The SQL analysis demonstrates effective data querying, filtering, aggregation, and categorization techniques.
+
+
+### Author - Zero Analyst
+This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
